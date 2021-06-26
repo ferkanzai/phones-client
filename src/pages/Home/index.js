@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
+import BackToTop from "react-back-to-top-button";
+
+import ArrowToTop from "../../components/ArrowToTop";
 
 import "./index.scss";
 
@@ -56,6 +59,20 @@ const Home = () => {
             </Link>
           ))}
       </InfiniteScroll>
+      <BackToTop
+        style={{
+          backgroundColor: "white",
+          width: "50px",
+          height: "50px",
+          borderRadius: "100%",
+          border: "1px solid black",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <ArrowToTop />
+      </BackToTop>
     </div>
   );
 };
