@@ -62,9 +62,11 @@ const SinglePhone = () => {
                 icon={gpu}
               />
               <PhoneDataAndIcon
-                text={`${
-                  phone.display_size + '"' || "Information not available"
-                } - ${phone.display_type || "Information not available"}`}
+                text={
+                  phone.display_size && phone.display_type
+                    ? `${phone.display_size + '"'} - ${phone.display_type}`
+                    : "Information not available"
+                }
                 icon={screen}
               />
               <PhoneDataAndIcon
@@ -93,7 +95,9 @@ const SinglePhone = () => {
               />
               <PhoneDataAndIcon
                 text={
-                  phone.battery_size + " mAh" || "Information not available"
+                  phone.battery_size
+                    ? phone.battery_size + " mAh"
+                    : "Information not available"
                 }
                 icon={battery}
               />

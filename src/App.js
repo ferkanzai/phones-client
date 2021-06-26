@@ -2,20 +2,25 @@ import { Route, Switch } from "react-router";
 
 import Home from "./pages/Home";
 import SinglePhone from "./pages/SinglePhone";
+import NavBar from "./components/NavBar";
+import AddPhone from "./pages/AddPhone";
 
 import "./App.css";
-import NavBar from "./components/NavBar";
 
 function App() {
   return (
     <>
       <Switch>
-        <Route path="/" exact>
-          <Home />
+        <Route path="/phone/add" exact>
+          <AddPhone />
         </Route>
 
         <Route path="/phone/:phoneId">
           <SinglePhone />
+        </Route>
+
+        <Route path="/" exact>
+          <Home />
         </Route>
       </Switch>
 

@@ -1,0 +1,52 @@
+.addPhone {
+  padding-top: 60px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    margin-top: 5px;
+  }
+
+  &__form {
+    max-width: 35%;
+    text-align: center;
+
+    &__input {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin: 0.25rem;
+
+      &__text {
+        outline: none;
+      }
+
+      &__error {
+        border: 1px solid red;
+        outline: none;
+      }
+
+      & img {
+        width: 25px;
+        height: 25px;
+        margin-right: 8px;
+      }
+    }
+
+    &__button {
+      margin: 20px;
+      padding: 10px 20px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .addPhone {
+    &__form {
+      max-width: 80%;
+    }
+  }
+}
