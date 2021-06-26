@@ -7,7 +7,7 @@
   padding-top: 60px;
 
   &__img {
-    height: 400px;
+    width: 300px;
   }
 
   &__data {
@@ -34,6 +34,7 @@
 
     &__img {
       height: 250px;
+      width: auto;
     }
 
     &__data {

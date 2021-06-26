@@ -16,6 +16,7 @@ import camera from "../../icons/camera.svg";
 import model from "../../icons/model.svg";
 import soc from "../../icons/soc.svg";
 import battery from "../../icons/battery.svg";
+import phoneGeneric from "../../icons/genericPhone.jpg";
 
 import "./index.scss";
 
@@ -35,7 +36,7 @@ const SinglePhone = () => {
         <>
           <div className="singlePhone">
             <img
-              src={phone.picture}
+              src={phone.picture || phoneGeneric}
               alt={phone.name}
               className="singlePhone__img"
             />
