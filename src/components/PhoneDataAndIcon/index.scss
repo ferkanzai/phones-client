@@ -1,0 +1,24 @@
+.phoneDataAndIcon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  & img {
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+  }
+
+  & p {
+    width: 80%;
+  }
+}
+
+@media (max-width: 500px) {
+  .phoneDataAndIcon {
+    & p {
+      width: 90%;
+    }
+  }
+}
