@@ -43,7 +43,12 @@ const Home = () => {
             <b>Yay! You have seen it all</b>
           </p>
         }
-        style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          paddingTop: "60px",
+        }}
       >
         {phones &&
           phones.map((phone) => (

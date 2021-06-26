@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   height: 600px;
+  padding-top: 60px;
 
   &__img {
     height: 400px;
@@ -29,7 +30,7 @@
   .singlePhone {
     flex-direction: column;
     height: 100%;
-    padding: 1rem 0;
+    padding: 60px 0;
 
     &__img {
       height: 250px;
