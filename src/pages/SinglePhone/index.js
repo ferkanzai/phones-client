@@ -15,6 +15,7 @@ import dimensions from "../../icons/dimensions.svg";
 import camera from "../../icons/camera.svg";
 import model from "../../icons/model.svg";
 import soc from "../../icons/soc.svg";
+import battery from "../../icons/battery.svg";
 
 import "./index.scss";
 
@@ -88,6 +89,12 @@ const SinglePhone = () => {
               <PhoneDataAndIcon
                 text={phone.rear_camera || "Information not available"}
                 icon={camera}
+              />
+              <PhoneDataAndIcon
+                text={
+                  phone.battery_size + " mAh" || "Information not available"
+                }
+                icon={battery}
               />
             </div>
           </div>
