@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
 import ScrollTop from "react-scrolltop-button";
 
 import ArrowToTop from "../../components/ArrowToTop";
 
 import "./index.scss";
+import Phones from "../../components/Phones";
 
 const Home = () => {
   const [phones, setPhones] = useState([]);
@@ -51,18 +51,7 @@ const Home = () => {
         }}
       >
         {phones &&
-          phones.map((phone) => (
-            <Link to={`/phone/${phone.id}`} key={phone.id}>
-              <div className="phone">
-                <img
-                  src={phone.picture}
-                  alt={phone.name}
-                  className="phone__img"
-                />
-                <p className="phone__name">{phone.name}</p>
-              </div>
-            </Link>
-          ))}
+          phones.map((phone) => <Phones key={phone.id} phone={phone} />)}
       </InfiniteScroll>
       <ScrollTop icon={<ArrowToTop />} className="home__toTop" style={{}} />
     </div>
