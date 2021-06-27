@@ -5,7 +5,7 @@ import { useHistory, useParams } from "react-router-dom";
 import PopUp from "../../components/PopUp";
 import SinglePhoneData from "../../components/SinglePhoneData";
 
-import phoneGeneric from "../../icons/genericPhone.jpg";
+import apiUrl from "../../const/apiUrl";
 
 import "./index.scss";
 
@@ -23,6 +23,7 @@ import model from "../../icons/model.svg";
 import soc from "../../icons/soc.svg";
 import battery from "../../icons/battery.svg";
 import addImg from "../../icons/addImg.svg";
+import phoneGeneric from "../../icons/genericPhone.jpg";
 
 const SinglePhone = () => {
   const [phone, setPhone] = useState(null);
@@ -40,9 +41,9 @@ const SinglePhone = () => {
   } = useForm();
 
   useEffect(() => {
-    fetch(
-      `https://fernando-phones-api.herokuapp.com/api/phones/${phoneId}`
-    ).then((res) => res.json().then((res) => setPhone(res.data[0])));
+    fetch(`${apiUrl}/phones/${phoneId}`).then((res) =>
+      res.json().then((res) => setPhone(res.data[0]))
+    );
   }, [phoneId, editable]);
 
   const handleDeletePopUp = () => {
@@ -50,16 +51,13 @@ const SinglePhone = () => {
   };
 
   const handleDelete = () => {
-    fetch(
-      `https://fernando-phones-api.herokuapp.com/api/phones/delete/${phoneId}`,
-      {
-        method: "DELETE",
-        mode: "cors",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    ).then((res) =>
+    fetch(`${apiUrl}/phones/delete/${phoneId}`, {
+      method: "DELETE",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((res) =>
       res
         .json()
         .then((res) => {
@@ -96,17 +94,14 @@ const SinglePhone = () => {
       new Map(Object.entries(formValues).filter((entry) => entry[1]))
     );
 
-    fetch(
-      `https://fernando-phones-api.herokuapp.com/api/phones/edit/${phoneId}`,
-      {
-        method: "PATCH",
-        mode: "cors",
-        body: JSON.stringify(values),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    ).then((res) =>
+    fetch(`${apiUrl}/phones/edit/${phoneId}`, {
+      method: "PATCH",
+      mode: "cors",
+      body: JSON.stringify(values),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((res) =>
       res
         .json()
         .then((res) => {

@@ -4,6 +4,8 @@ import { useForm } from "react-hook-form";
 
 import PopUp from "../../components/PopUp";
 
+import apiUrl from "../../const/apiUrl";
+
 import cpu from "../../icons/cpu.svg";
 import ram from "../../icons/ram.svg";
 import gpu from "../../icons/gpu.svg";
@@ -36,7 +38,7 @@ const AddPhone = () => {
       new Map(Object.entries(formValues).filter((entry) => entry[1]))
     );
 
-    fetch("https://fernando-phones-api.herokuapp.com/api/phones/add", {
+    fetch(`${apiUrl}/phones/add`, {
       method: "POST",
       mode: "cors",
       body: JSON.stringify(values),

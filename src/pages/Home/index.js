@@ -3,9 +3,11 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import ScrollTop from "react-scrolltop-button";
 
 import ArrowToTop from "../../components/ArrowToTop";
+import Phones from "../../components/Phones";
+
+import apiUrl from "../../const/apiUrl";
 
 import "./index.scss";
-import Phones from "../../components/Phones";
 
 const Home = () => {
   const [phones, setPhones] = useState([]);
@@ -13,7 +15,7 @@ const Home = () => {
   const [more, setMore] = useState(true);
 
   useEffect(() => {
-    fetch("https://fernando-phones-api.herokuapp.com/api/phones").then((res) =>
+    fetch(`${apiUrl}/phones`).then((res) =>
       res.json().then((res) => {
         setPhones(res.data);
         setNextPage(res.nextPage);
@@ -22,9 +24,7 @@ const Home = () => {
   }, []);
 
   const loadMoreProducts = () => {
-    fetch(
-      `https://fernando-phones-api.herokuapp.com/api/phones?page=${nextPage}`
-    ).then((res) =>
+    fetch(`${apiUrl}/phones?page=${nextPage}`).then((res) =>
       res.json().then((res) => {
         setPhones((prevPhones) => [...prevPhones, ...res.data]);
         if (!res.nextPage) setMore(false);
