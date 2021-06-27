@@ -34,17 +34,17 @@ const Home = () => {
   };
 
   return (
-    <div className="home">
+    <div className="home" data-testid="home">
       <InfiniteScroll
         dataLength={phones.length}
-        next={loadMoreProducts}
-        hasMore={more}
-        loader={<h4>Loading...</h4>}
         endMessage={
           <p style={{ textAlign: "center" }}>
             <b>You have reached the end, nothing else to show</b>
           </p>
         }
+        hasMore={more}
+        loader={<h4>Loading...</h4>}
+        next={loadMoreProducts}
         style={{
           display: "flex",
           flexWrap: "wrap",

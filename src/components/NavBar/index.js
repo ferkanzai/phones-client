@@ -9,10 +9,10 @@ const NavBar = () => {
   return (
     <div className="navBar" data-testid="navbar">
       <div className="navBar__links">
-        <Link to="/">
+        <Link to="/" data-testid="navbar-link">
           <img src={home} alt="" />
         </Link>
-        <Link to="/phone/add">
+        <Link to="/phone/add" data-testid="navbar-link">
           <img src={addPhone} alt="" />
         </Link>
       </div>

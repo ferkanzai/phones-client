@@ -1,32 +1,31 @@
-import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
-// import Route from "react-router-dom";
+import { Route, Switch } from "react-router";
 
+import AddPhone from "./pages/AddPhone";
 import Home from "./pages/Home";
 import SinglePhone from "./pages/SinglePhone";
 import NavBar from "./components/NavBar";
-import AddPhone from "./pages/AddPhone";
 
 import "./App.css";
 
 function App() {
   return (
-    <Router>
+    <>
       <Switch>
-        <Route path="/phone/add" exact>
-          <AddPhone />
+        <Route path="/" exact>
+          <Home />
         </Route>
 
         <Route path="/phone/:phoneId">
           <SinglePhone />
         </Route>
 
-        <Route path="/" exact>
-          <Home />
+        <Route path="/phone/add" exact>
+          <AddPhone />
         </Route>
       </Switch>
 
       <NavBar />
-    </Router>
+    </>
   );
 }
 

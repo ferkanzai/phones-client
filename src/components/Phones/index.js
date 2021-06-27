@@ -6,7 +6,7 @@ import "./index.scss";
 
 const Phones = ({ phone }) => {
   return (
-    <Link to={`/phone/${phone.id}`} key={phone.id}>
+    <Link to={`/phone/${phone.id}`} key={phone.id} data-testid="phone">
       <div className="phone">
         <img
           src={phone.picture || phoneGeneric}
