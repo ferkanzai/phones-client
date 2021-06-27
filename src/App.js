@@ -11,16 +11,16 @@ function App() {
   return (
     <>
       <Switch>
+        <Route path="/phone/add" exact>
+          <AddPhone />
+        </Route>
+
         <Route path="/" exact>
           <Home />
         </Route>
 
         <Route path="/phone/:phoneId">
           <SinglePhone />
-        </Route>
-
-        <Route path="/phone/add" exact>
-          <AddPhone />
         </Route>
       </Switch>
 
