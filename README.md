@@ -86,3 +86,10 @@ In the application you can find the following components:
 4. `Phones` is the a component to arrange the picture and name of the phones in order to display them in the home page. Each phone you see in this page is using this component when the phones array is being mapped, passing the data as a prop.
 5. `PopUp` is the component used in order to display information about errors when calling the API or even the message that is shown when trying to delete a phone, in order to confirm the action. You can pass different props to this components depending on the text you need to display or the number of buttons and its actions.
 6. `SinglePhoneData` arranges the information about a single phone, and contains several `PhoneDataAndIcon` components, each of them having a single piece of information.
+
+## 4. Tests
+
+I have created some tests in order to check the app properly. There are test for the following components:
+
+- `App.test.js` will test if the navbar and home are being displayed when the app is rendered.
+- `NavBar` tests will check if there are two links being displayed when the navbar is rendered.
