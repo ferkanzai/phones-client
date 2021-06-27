@@ -249,7 +249,14 @@ const AddPhone = () => {
         </div>
         <input type="submit" value="Add" className="addPhone__form__button" />
       </form>
-      {addError && <PopUp closePopUp={handlePopUp} />}
+      {addError && (
+        <PopUp
+          closePopUp={handlePopUp}
+          title="Server error"
+          info="There was an error trying to add a phone. Please, try again."
+          primaryButton="Continue"
+        />
+      )}
     </div>
   );
 };
