@@ -36,7 +36,7 @@ const AddPhone = () => {
       new Map(Object.entries(formValues).filter((entry) => entry[1]))
     );
 
-    fetch("http://localhost:4000/api/phones/add", {
+    fetch("https://fernando-phones-api.herokuapp.com/api/phones/add", {
       method: "POST",
       mode: "cors",
       body: JSON.stringify(values),

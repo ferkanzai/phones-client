@@ -40,9 +40,9 @@ const SinglePhone = () => {
   } = useForm();
 
   useEffect(() => {
-    fetch(`http://localhost:4000/api/phones/${phoneId}`).then((res) =>
-      res.json().then((res) => setPhone(res.data[0]))
-    );
+    fetch(
+      `https://fernando-phones-api.herokuapp.com/api/phones/${phoneId}`
+    ).then((res) => res.json().then((res) => setPhone(res.data[0])));
   }, [phoneId, editable]);
 
   const handleDeletePopUp = () => {
@@ -50,13 +50,16 @@ const SinglePhone = () => {
   };
 
   const handleDelete = () => {
-    fetch(`http://localhost:4000/api/phones/delete/${phoneId}`, {
-      method: "DELETE",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then((res) =>
+    fetch(
+      `https://fernando-phones-api.herokuapp.com/api/phones/delete/${phoneId}`,
+      {
+        method: "DELETE",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    ).then((res) =>
       res
         .json()
         .then((res) => {
@@ -93,14 +96,17 @@ const SinglePhone = () => {
       new Map(Object.entries(formValues).filter((entry) => entry[1]))
     );
 
-    fetch(`http://localhost:4000/api/phones/edit/${phoneId}`, {
-      method: "PATCH",
-      mode: "cors",
-      body: JSON.stringify(values),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then((res) =>
+    fetch(
+      `https://fernando-phones-api.herokuapp.com/api/phones/edit/${phoneId}`,
+      {
+        method: "PATCH",
+        mode: "cors",
+        body: JSON.stringify(values),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    ).then((res) =>
       res
         .json()
         .then((res) => {

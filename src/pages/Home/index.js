@@ -13,7 +13,7 @@ const Home = () => {
   const [more, setMore] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:4000/api/phones").then((res) =>
+    fetch("https://fernando-phones-api.herokuapp.com/api/phones").then((res) =>
       res.json().then((res) => {
         setPhones(res.data);
         setNextPage(res.nextPage);
@@ -22,7 +22,9 @@ const Home = () => {
   }, []);
 
   const loadMoreProducts = () => {
-    fetch(`http://localhost:4000/api/phones?page=${nextPage}`).then((res) =>
+    fetch(
+      `https://fernando-phones-api.herokuapp.com/api/phones?page=${nextPage}`
+    ).then((res) =>
       res.json().then((res) => {
         setPhones((prevPhones) => [...prevPhones, ...res.data]);
         if (!res.nextPage) setMore(false);
