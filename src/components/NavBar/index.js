@@ -7,7 +7,7 @@ import "./index.scss";
 
 const NavBar = () => {
   return (
-    <div className="navBar">
+    <div className="navBar" data-testid="navbar">
       <div className="navBar__links">
         <Link to="/">
           <img src={home} alt="" />
