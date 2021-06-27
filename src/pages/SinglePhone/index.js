@@ -35,7 +35,7 @@ const SinglePhone = () => {
   const {
     handleSubmit,
     register,
-    formState: { errors, isDirty, isValid },
+    formState: { errors },
     reset,
   } = useForm();
 
@@ -385,10 +385,7 @@ const SinglePhone = () => {
               {!editable ? (
                 <button onClick={handleEditable}>Edit</button>
               ) : (
-                <button
-                  onClick={handleSubmit(handleFormSubmit)}
-                  disabled={!isDirty || !isValid}
-                >
+                <button onClick={handleSubmit(handleFormSubmit)}>
                   Confirm
                 </button>
               )}
