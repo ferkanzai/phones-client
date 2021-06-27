@@ -16,63 +16,63 @@ import battery from "../../icons/battery.svg";
 
 const SinglePhoneData = ({ phone }) => {
   return (
-    <div className="singlePhone__phone__data">
+    <div className="singlePhone__phone__data" data-testid="singlePhoneData">
       <PhoneDataAndIcon
-        text={phone.name || "Information not available"}
+        text={phone?.name || "Information not available"}
         icon={model}
       />
       <PhoneDataAndIcon
-        text={phone.soc || "Information not available"}
+        text={phone?.soc || "Information not available"}
         icon={soc}
       />
       <PhoneDataAndIcon
-        text={phone.cpu || "Information not available"}
+        text={phone?.cpu || "Information not available"}
         icon={cpu}
       />
       <PhoneDataAndIcon
-        text={phone.ram || "Information not available"}
+        text={phone?.ram || "Information not available"}
         icon={ram}
       />
       <PhoneDataAndIcon
-        text={phone.gpu || "Information not available"}
+        text={phone?.gpu || "Information not available"}
         icon={gpu}
       />
       <PhoneDataAndIcon
         text={
-          phone.display_size && phone.display_type
+          phone?.display_size && phone?.display_type
             ? `${phone.display_size + '"'} - ${phone.display_type}`
             : "Information not available"
         }
         icon={screen}
       />
       <PhoneDataAndIcon
-        text={phone.os || "Information not available"}
+        text={phone?.os || "Information not available"}
         icon={os}
       />
       <PhoneDataAndIcon
-        text={phone.storage || "Information not available"}
+        text={phone?.storage || "Information not available"}
         icon={storage}
       />
       <PhoneDataAndIcon
-        text={phone.usb_type || "Information not available"}
+        text={phone?.usb_type || "Information not available"}
         icon={usb}
       />
       <PhoneDataAndIcon
-        text={phone.weight || "Information not available"}
+        text={phone?.weight || "Information not available"}
         icon={weight}
       />
       <PhoneDataAndIcon
-        text={phone.dimensions || "Information not available"}
+        text={phone?.dimensions || "Information not available"}
         icon={dimensions}
       />
       <PhoneDataAndIcon
-        text={phone.rear_camera || "Information not available"}
+        text={phone?.rear_camera || "Information not available"}
         icon={camera}
       />
       <PhoneDataAndIcon
         text={
-          phone.battery_size
-            ? phone.battery_size + " mAh"
+          phone?.battery_size
+            ? phone?.battery_size + " mAh"
             : "Information not available"
         }
         icon={battery}

@@ -93,3 +93,5 @@ I have created some tests in order to check the app properly. There are test for
 
 - `App.test.js` will test if the navbar and home are being displayed when the app is rendered.
 - `NavBar` tests will check if there are two links being displayed when the navbar is rendered.
+- `SinglePhone` checks if the fallback text is visible if no phone data is returned from the API.
+- `SinglePhoneData` checks if the component is visible and also that there are 13 elemets of data plus icon (all the phone information)

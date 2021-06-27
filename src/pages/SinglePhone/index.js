@@ -126,9 +126,10 @@ const SinglePhone = () => {
           <div className="singlePhone">
             <div className="singlePhone__phone">
               <img
-                src={phone.picture || phoneGeneric}
-                alt={phone.name}
+                src={phone?.picture || phoneGeneric}
+                alt={phone?.name || "generic phone img"}
                 className="singlePhone__phone__img"
+                data-testid="singlePhone-img"
               />
               {!editable ? (
                 <SinglePhoneData phone={phone} />
