@@ -1,4 +1,5 @@
-import { Route, Switch } from "react-router";
+import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
+// import Route from "react-router-dom";
 
 import Home from "./pages/Home";
 import SinglePhone from "./pages/SinglePhone";
@@ -9,7 +10,7 @@ import "./App.css";
 
 function App() {
   return (
-    <>
+    <Router>
       <Switch>
         <Route path="/phone/add" exact>
           <AddPhone />
@@ -25,7 +26,7 @@ function App() {
       </Switch>
 
       <NavBar />
-    </>
+    </Router>
   );
 }
 
