@@ -17,8 +17,12 @@
     &__input {
       display: flex;
       align-items: center;
-      justify-content: space-around;
+      justify-content: flex-start;
       margin: 0.25rem;
+
+      & p {
+        margin: 0;
+      }
 
       &__text {
         outline: none;
